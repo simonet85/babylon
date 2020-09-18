@@ -188,11 +188,11 @@ function createFreeCamera(scene) {
 
 function createFollowCamera(scene, target) {
     var camera = new BABYLON.FollowCamera("tankFollowCamera", target.position, scene, target);
-    camera.radius = 20; // how far from the object to follow
-    camera.heightOffset = 4; // how high above the object to place the camera
-    camera.rotationOffset = 180; // the viewing angle
-    camera.cameraAcceleration = .1; // how fast to move
-    camera.maxCameraSpeed = 5; // speed limit
+    camera.radius = 20; // la distance entre l'object et le Dude
+    camera.heightOffset = 4; // la hauteur de l'objet par rapport à camera
+    camera.rotationOffset = 180; // l'angle de vue
+    camera.cameraAcceleration = .1; // la rpidité
+    camera.maxCameraSpeed = 5; // vitesse limit
     return camera;
 }
 function createTank(scene) {
@@ -233,7 +233,7 @@ function createTank(scene) {
 
     }
     
-
+    //Actionner les balle
     tank.fireCannonBalls = function()
     {
 
@@ -340,7 +340,7 @@ function createHeroDude(scene) {
 
     BABYLON.SceneLoader.ImportMesh("him", "./models/Dude/", "Dude.babylon", scene, onDudeImported);
     function onDudeImported(newMeshes, particleSystems, skeletons) {
-        newMeshes[0].position = new BABYLON.Vector3(0, 0, 5);  // The original dude
+        newMeshes[0].position = new BABYLON.Vector3(0, 0, 5);  
         newMeshes[0].name = "heroDude";
         var heroDude = newMeshes[0];
 
