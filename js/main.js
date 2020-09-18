@@ -1,5 +1,3 @@
-{/* <reference path="js/babylon.max.js" /> */}
-{/* <reference path="js/cannon.js" /> */}
 var canvas;
 var engine;
 var scene;
@@ -320,9 +318,6 @@ function createTank(scene) {
         }
         );
 
-
-        
-
         for (var i = 0 ; i < pickInfos.length ; i++) {
             var pickInfo = pickInfos[i];
             if (pickInfo.pickedMesh) {
@@ -388,7 +383,7 @@ function DoClone(original, skeletons, id) {
             return myClone;
         }
         else {
-            if (skeletons.length == 1)// this means one skeleton controlling/animating all the children
+            if (skeletons.length == 1)// cela signifie qu'un seul squelette contrôle/anime tous les enfants
             {
                 var clonedSkeleton = skeletons[0].clone("clone_" + id + "_skeleton");
                 myClone.skeleton = clonedSkeleton;
@@ -398,7 +393,7 @@ function DoClone(original, skeletons, id) {
                 }
                 return myClone;
             }
-            else if (skeletons.length == original.getChildren().length) { // Most probably each child has its own skeleton
+            else if (skeletons.length == original.getChildren().length) { // Il est fort probable que chaque enfant ait son propre squelette
                 for (var i = 0 ; i < myClone.getChildren().length; i++) {
                     myClone.getChildren()[i].skeleton = skeletons[i].clone("clone_" + id + "_skeleton_" + i);
                 }
