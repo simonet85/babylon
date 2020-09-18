@@ -37,7 +37,6 @@ class Dude {
     }
 
     move() {
-
         if (!this.bounder) return;
         this.dudeMesh.position = new BABYLON.Vector3(this.bounder.position.x,
             this.bounder.position.y - this.scaling * Dude.boundingBoxParameters.lengthY/2.0 , this.bounder.position.z);
@@ -50,7 +49,6 @@ class Dude {
         if (distance > 30)
             this.bounder.moveWithCollisions(dir.multiplyByFloats(this.speed, this.speed, this.speed));
     }
-
     createBoundingBox() {
         var lengthX = Dude.boundingBoxParameters.lengthX;
         var lengthY = Dude.boundingBoxParameters.lengthY;
